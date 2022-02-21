@@ -24,5 +24,41 @@
     "atkspeed": 75,
     "stun": 0,
     "rarity": "RARE"
+  },
+  "dagger": {
+    "display_name": "Dagger",
+    "dmg": 125,
+    "firedmg": 0,
+    "waterdmg": 0,
+    "electrodmg": 0,
+    "earthdmg": 0,
+    "element": "NONE",
+    "atkspeed": 75,
+    "stun": 0,
+    "rarity": "RARE"
+  },
+  "claw": {
+    "display_name": "Claws",
+    "dmg": 125,
+    "firedmg": 0,
+    "waterdmg": 0,
+    "electrodmg": 0,
+    "earthdmg": 0,
+    "element": "NONE",
+    "atkspeed": 75,
+    "stun": 0,
+    "rarity": "RARE"
+  },
+  "claw": {
+    "display_name": "Claws",
+    "dmg": 125,
+    "firedmg": 0,
+    "waterdmg": 0,
+    "electrodmg": 0,
+    "earthdmg": 0,
+    "element": "NONE",
+    "atkspeed": 75,
+    "stun": 0,
+    "rarity": "RARE"
   }
 }
