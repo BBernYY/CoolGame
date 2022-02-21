@@ -1,12 +1,10 @@
-<<<<<<< HEAD
 from json import dump
 import utils
 
 def save_game(changes):
-    json.dump(changes)
+    dump(changes, open('data.json', 'w'))
 
-def main():
-=======
+
 def execute_command(command, *args):
     if command == 'fight':
         fight(*args)
@@ -22,7 +20,6 @@ def main():
     import utils # imports my customized utils module, with a test and timing function. https://GitHub.com/BBernYY/FancyCoding
     from json import load
 
->>>>>>> 3703392efdc872f1e744a2db5a3b0c31bcd1f21a
 
 if __name__ == '__main__': 
     main() 
