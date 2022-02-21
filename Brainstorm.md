@@ -10,3 +10,8 @@ weapon sim
 > lightning
 > water
 > earth
+
+# hoe gaat the spel working
+* commands
+> roll weapon
+* currency
