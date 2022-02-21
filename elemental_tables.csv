@@ -1,0 +1,5 @@
+type,fire,water,electro,earth
+fire,fire,steam,plasma,lava
+water,steam,water,conduct,mud
+electro,plasma,conduct,electro,weak
+earth,lava,mud,weak,earth

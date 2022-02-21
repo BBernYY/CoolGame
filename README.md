@@ -1,7 +1,12 @@
-# name
-short desc
-## how to use
-info
-## tips
-* tip
-* tip
+# brainstorm
+weapon sim
+* weapons
+* enemies
+* reforges / enchantments
+* leveling
+* element combos
+> 4 elements
+> fire - 
+> lightning
+> water
+> earth
