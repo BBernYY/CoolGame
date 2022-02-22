@@ -1,1 +1,17 @@
-{"weapon": {"display_name": "Deathbringer", "dmg": 280, "firedmg": 0, "waterdmg": 0, "electrodmg": 0, "earthdmg": 0, "element": "FIRE", "atkspeed": 10, "type": "heavy", "stun": 600, "rarity": "RARE / COMMON", "reforge": "Stunning"}, "cash": 60}
+{
+    "cash": 0,
+    "weapon": {
+        "display_name": "Deathbringer",
+        "dmg": 200,
+        "firedmg": 0,
+        "waterdmg": 0,
+        "electrodmg": 0,
+        "earthdmg": 0,
+        "element": "FIRE",
+        "atkspeed": 80,
+        "type": "heavy",
+        "stun": 100,
+        "rarity": "RARE / COMMON",
+        "reforge": "Light"
+    }
+}

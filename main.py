@@ -50,13 +50,17 @@ def fight(weapon, enemy, starting_cash):
     if weapon == {}:
         print("No weapon detected! Use \"roll weapon\" to get a new weapon.")
         return
-    print("This is your matchup:")
+    print("This is your matchup:\n")
+    sleep(1)
     print(enemy)
+    sleep(3)
     if enemy['weakness'] == weapon['element']:
         weapon['dmg'] *= enemy['weakness_severity']
     if enemy['strength'] == weapon['element']:
         enemy['dmg'] *= enemy['strength_severity']
     player_health = 100
+    print("\n\n\nThe battle starts!\n\n")
+    sleep(1)
     while enemy['health'] > 0 and player_health > 0:
         time_left = 100.0
         hits = 0
@@ -68,17 +72,19 @@ def fight(weapon, enemy, starting_cash):
         time_left = 100.0 - weapon['stun'] / 50
         print(f"You hit {hits} times with a damage of {weapon['dmg']}! The enemy now has {enemy['health']} health left.")
         hits = 0
+        sleep(2)
         while time_left > 0.0:
             player_health -= enemy['dmg']
             time_cost = (1 / enemy['atkspeed']) * 1000.0
             time_left -= time_cost
             hits += 1
-        print(f"The enemy hit you {hits} times with a damage of {enemy['dmg']}! You now have {player_health} health left.")
-        sleep(0.5)
+        print(f"\n\nThe enemy hit you {hits} times with a damage of {enemy['dmg']}! You now have {player_health} health left.")
+        sleep(2)
     if player_health > int(enemy['health']):
-        print("You won! you got 20 cash.")
+        print("\n\nYou won! you got 20 cash.")
     else:
-        print("You lost...")
+        print("\n\nYou lost...")
+    sleep(1)
     dump({"weapon": weapon, "cash": starting_cash + 20}, open('data.json', 'w'))
 
 def execute_command(command, *args):
@@ -97,7 +103,7 @@ def execute_command(command, *args):
     elif command == 'reset':
         dump({"cash": 200, "weapon": {}}, open("data.json", "w"))
         exit()
-    print("new stats:")
+    print("\n\nnew stats:\n\n")
     print(load(open('data.json', 'r')))
 def main():
     from json import load
@@ -107,6 +113,6 @@ def main():
     else:
         print("Data has been loaded.\nWelcome to Weapon Simulator.")
     while True:
-        execute_command(*(input("Enter your command here --> ").split(' ')))
+        execute_command(*(input("\n\nEnter your command here --> ").split(' ')))
 if __name__ == '__main__': 
-    main() 
+    main()
