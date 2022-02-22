@@ -24,7 +24,7 @@
     "element": "EARTH",
     "atkspeed": 75,
     "stun": 0,
-    "rarity": "RARE",
+    "rarity": "UNCOMMON",
     "reforge": "NONE"
   },
   "dagger": {
@@ -50,7 +50,7 @@
     "element": "ELECTRO",
     "atkspeed": 20,
     "stun": 100,
-    "rarity": "RARE",
+    "rarity": "LEGENDARY",
     "reforge": "NONE"
   },
   "katana": {

@@ -1,40 +1,40 @@
 {
     "fire": {
         "display_name": "Molten",
-        "dmg": "25",
+        "dmg": 25,
         "weakness": "WATER",
         "weakness_severity": 1.5,
-        "health": "1000",
+        "health": 500,
         "atkspeed": 35,
-        "strength": "LAVA",
+        "strength": "FIRE",
         "strength_severity": 0.75
     },
     "earth": {
         "display_name": "Golem",
-        "dmg": "50",
+        "dmg": 50,
         "weakness": "FIRE",
         "weakness_severity": 1.2,
-        "health": "2500",
+        "health": 750,
         "atkspeed": 10,
         "strength": "ELECTRO",
         "strength_severity": 1
     },
     "water": {
         "display_name": "Slime",
-        "dmg": "10",
+        "dmg": 10,
         "weakness": "ELECTRO",
         "weakness_severity": 2,
-        "health": "500",
+        "health": 200,
         "atkspeed": 80,
         "strength": "EARTH",
         "strength_severity": 0.5
     },
     "electro": {
         "display_name": "Storm",
-        "dmg": "20",
+        "dmg": 20,
         "weakness": "EARTH",
         "weakness_severity": 1,
-        "health": "750",
+        "health": 350,
         "atkspeed": 75,
         "strength": "WATER",
         "strength_severity": 2.5
