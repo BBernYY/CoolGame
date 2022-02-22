@@ -71,22 +71,31 @@ def fight(weapon, enemy):
     return player_health > int(enemy['health'])
 
 def execute_command(command, *args):
-    from json import load
+    from json import load, dump
+    from random import choice
+    data = load(open('data.json', 'r'))
     if command == 'fight':
-        fight(load(open("data.json", "r"))['weapon'])
-    elif command == 'roll':
+        fight(load(open("data.json", "r"))['weapon'], choice(load(open("enemies.json", "r"))))
+    elif command == 'roll' and data['cash'] >= 100:
         if args[0] == 'weapon':
-            out = roll_weapon(*args[1:])
+            roll_weapon(data['cash'])
         elif args[0] == 'reforge':
-            out = roll_reforge(*args[1:])
-    elif command == 'respond':
-        out = " ".join(args)
-    return out
-
+            roll_reforge(data['cash'], data['weapon'])
+    elif command == 'roll' and data['cash'] < 100:
+        print("You are too poor. Win some battles to get a new reroll!")
+    elif command == 'reset':
+        dump({"cash": 200, "weapon": {}}, open("data.json", "w"))
+        exit()
+    print("new stats:")
+    print(load(open('data.json', 'r')))
 def main():
-    import utils # imports my customized utils module, with a test and timing function. https://GitHub.com/BBernYY/FancyCoding
     from json import load
-
-
+    data = load(open("data.json", "r"))
+    if data == {"cash": 200, "weapon": {}}:
+        print("Welcome to Weapon Simulator! This is a console simulator with multiple weapons and reforges. You have 200 starter cash.\nTo roll a new weapon, type \"roll weapon\". To fight, type \"fight\". You can also \"roll reforge\".")
+    else:
+        print("Data has been loaded.\nWelcome to Weapon Simulator.")
+    while True:
+        execute_command(*(input("Enter your command here --> ").split(' ')))
 if __name__ == '__main__': 
     main() 

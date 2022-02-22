@@ -1,16 +1,17 @@
 {
-    "cash": 300,
+    "cash": 0,
     "weapon": {
-        "display_name": "Dagger",
-        "dmg": 80,
+        "display_name": "Deathbringer",
+        "dmg": 250,
         "firedmg": 0,
         "waterdmg": 0,
         "electrodmg": 0,
         "earthdmg": 0,
-        "element": "",
-        "atkspeed": 40,
-        "stun": 510,
-        "rarity": "COMMON / COMMON",
-        "reforge": "Quick"
+        "element": "FIRE",
+        "atkspeed": 50,
+        "type": "heavy",
+        "stun": 100,
+        "rarity": "RARE / COMMON",
+        "reforge": "Dumb"
     }
 }
