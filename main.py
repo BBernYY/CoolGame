@@ -4,6 +4,8 @@ def combine_dict(data, changes):
             if not isinstance(changes[k], str):
                 data[k] += changes[k]
 
+
+
 def save_game(changes):
     from json import dump, load
     data = load(open('data.json', 'r'))
