@@ -1,5 +1,6 @@
 {
-    "fire": {
+    "enemies": [
+    {
         "display_name": "Molten",
         "dmg": 25,
         "weakness": "WATER",
@@ -9,7 +10,7 @@
         "strength": "FIRE",
         "strength_severity": 0.75
     },
-    "earth": {
+    {
         "display_name": "Golem",
         "dmg": 50,
         "weakness": "FIRE",
@@ -19,7 +20,7 @@
         "strength": "ELECTRO",
         "strength_severity": 1
     },
-    "water": {
+    {
         "display_name": "Slime",
         "dmg": 10,
         "weakness": "ELECTRO",
@@ -29,7 +30,7 @@
         "strength": "EARTH",
         "strength_severity": 0.5
     },
-    "electro": {
+    {
         "display_name": "Storm",
         "dmg": 20,
         "weakness": "EARTH",
@@ -39,5 +40,5 @@
         "strength": "WATER",
         "strength_severity": 2.5
     }
-    
+]
 }

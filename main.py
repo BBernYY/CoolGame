@@ -19,7 +19,7 @@ def roll_weapon(current_cash):
     weapon = choice(pool)
     save_game({"cash": current_cash-100, "weapon": weapon})
     return weapon
-def roll_reforge(current_cash, weapon):
+def roll_reforge(current_cash, weapon_name):
     from random import randint, choice
     from json import load
     rarities = {
@@ -35,16 +35,23 @@ def roll_reforge(current_cash, weapon):
         if load(open("reforges.json", 'r'))[i]['rarity'] == rarity:
             pool.append(load(open("reforges.json", 'r'))[i])
     reforge = choice(pool)
+    for v in load(open("weapons.json", "r")).values():
+        if v['display_name'] == weapon_name:
+            weapon = v
+            break
     for k, v in reforge.items():
         weapon[k] += v
     save_game({"cash": current_cash - 100, "weapon": weapon})
     return weapon
 
-def fight(weapon, enemy):
+def fight(weapon, enemy, starting_cash):
     from time import sleep
+    from json import dump
     if weapon == {}:
         print("No weapon detected! Use \"roll weapon\" to get a new weapon.")
         return
+    print("This is your matchup:")
+    print(enemy)
     if enemy['weakness'] == weapon['element']:
         weapon['dmg'] *= enemy['weakness_severity']
     if enemy['strength'] == weapon['element']:
@@ -52,35 +59,39 @@ def fight(weapon, enemy):
     player_health = 100
     while enemy['health'] > 0 and player_health > 0:
         time_left = 100.0
+        hits = 0
         while time_left > 0.0:
             enemy['health'] -= weapon['dmg']
-            print(f"You attacked for {weapon['dmg']} damage!")
             time_cost = (1 / weapon['atkspeed']) * 1000.0
             time_left -= time_cost
-            print(f'The attack took {time_cost} seconds to complete!')
-            sleep(0.5)
-        time_left = 100.0
-        
+            hits += 1
+        time_left = 100.0 - weapon['stun'] / 50
+        print(f"You hit {hits} times with a damage of {weapon['dmg']}! The enemy now has {enemy['health']} health left.")
+        hits = 0
         while time_left > 0.0:
             player_health -= enemy['dmg']
-            print(f"The enemy attacked for {enemy['dmg']} damage!")
             time_cost = (1 / enemy['atkspeed']) * 1000.0
             time_left -= time_cost
-            print(f'The attack took {time_cost} seconds to complete!')
-            sleep(0.5)
-    return player_health > int(enemy['health'])
+            hits += 1
+        print(f"The enemy hit you {hits} times with a damage of {enemy['dmg']}! You now have {player_health} health left.")
+        sleep(0.5)
+    if player_health > int(enemy['health']):
+        print("You won! you got 20 cash.")
+    else:
+        print("You lost...")
+    dump({"weapon": weapon, "cash": starting_cash + 20}, open('data.json', 'w'))
 
 def execute_command(command, *args):
     from json import load, dump
     from random import choice
     data = load(open('data.json', 'r'))
     if command == 'fight':
-        fight(load(open("data.json", "r"))['weapon'], choice(load(open("enemies.json", "r"))))
+        fight(load(open("data.json", "r"))['weapon'], choice(load(open("enemies.json", "r"))['enemies']), data['cash'])
     elif command == 'roll' and data['cash'] >= 100:
         if args[0] == 'weapon':
             roll_weapon(data['cash'])
         elif args[0] == 'reforge':
-            roll_reforge(data['cash'], data['weapon'])
+            roll_reforge(data['cash'], data['weapon']['display_name'])
     elif command == 'roll' and data['cash'] < 100:
         print("You are too poor. Win some battles to get a new reroll!")
     elif command == 'reset':
