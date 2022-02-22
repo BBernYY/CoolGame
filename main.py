@@ -5,7 +5,7 @@ def roll_weapon(current_cash):
     from random import randint, choice
     from json import load
     rarities = {
-        "LEGENDARY":95, "RARE":75, "UNCOMMON":50, "COMMON":0
+        "LEGENDARY / ":95, "RARE / ":75, "UNCOMMON / ":50, "COMMON / ":0
     }
     roll = randint(0, 100)
     for k, v in rarities.items():
@@ -16,8 +16,9 @@ def roll_weapon(current_cash):
     for i in load(open("weapons.json", 'r')).keys():
         if load(open("weapons.json", 'r'))[i]['rarity'] == rarity:
             pool.append(load(open("weapons.json", 'r'))[i])
-    save_game({"cash": current_cash-100, "weapon": choice(pool)})
-
+    weapon = choice(pool)
+    save_game({"cash": current_cash-100, "weapon": weapon})
+    return weapon
 def roll_reforge(current_cash, weapon):
     from random import randint, choice
     from json import load
@@ -33,8 +34,11 @@ def roll_reforge(current_cash, weapon):
     for i in load(open("reforges.json", 'r')).keys():
         if load(open("reforges.json", 'r'))[i]['rarity'] == rarity:
             pool.append(load(open("reforges.json", 'r'))[i])
-    save_game({"cash": -100, "weapons": [choice(pool)]})
-    return {"cash": current_cash - 100, "weapon": combine_dict(weapon, choice(pool))}
+    reforge = choice(pool)
+    for k, v in reforge.items():
+        weapon[k] += v
+    save_game({"cash": current_cash - 100, "weapon": weapon})
+    return weapon
 
 def fight(weapon, enemy):
     from time import sleep

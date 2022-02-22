@@ -10,4 +10,5 @@ enemy = {
         "strength": "FIRE",
         "strength_severity": 0.75
     }
-print(main.fight(load(open("data.json", "r"))['weapon'], enemy))
+
+print(main.fight(main.roll_reforge(400, main.roll_weapon(500)), enemy))

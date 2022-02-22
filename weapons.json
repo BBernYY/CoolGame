@@ -10,8 +10,8 @@
     "atkspeed": 30,
     "type": "heavy",
     "stun": 100,
-    "rarity": "RARE",
-    "reforge": "NONE"
+    "rarity": "RARE / ",
+    "reforge": ""
   },
 
   "claw": {
@@ -21,11 +21,11 @@
     "waterdmg": 0,
     "electrodmg": 0,
     "earthdmg": 0,
-    "element": "EARTH",
+    "element": "",
     "atkspeed": 75,
     "stun": 0,
-    "rarity": "UNCOMMON",
-    "reforge": "NONE"
+    "rarity": "UNCOMMON / ",
+    "reforge": ""
   },
   "dagger": {
     "display_name": "Dagger",
@@ -34,24 +34,24 @@
     "waterdmg": 0,
     "electrodmg": 0,
     "earthdmg": 0,
-    "element": "WATER",
+    "element": "",
     "atkspeed": 60,
     "stun": 10,
-    "rarity": "COMMON",
-    "reforge": "NONE"
+    "rarity": "COMMON / ",
+    "reforge": ""
   },
-  "thunderwand": {
-    "display_name": "Thunder Wand",
-    "dmg": 50,
+  "wand": {
+    "display_name": "Wand",
+    "dmg": 100,
     "firedmg": 0,
     "waterdmg": 0,
     "electrodmg": 0.25,
     "earthdmg": 0,
-    "element": "ELECTRO",
+    "element": "",
     "atkspeed": 20,
     "stun": 100,
-    "rarity": "LEGENDARY",
-    "reforge": "NONE"
+    "rarity": "LEGENDARY / ",
+    "reforge": ""
   },
   "katana": {
     "display_name": "katana",
@@ -60,10 +60,10 @@
     "waterdmg": 0,
     "electrodmg": 0,
     "earthdmg": 0,
-    "element": "FIRE",
+    "element": "",
     "atkspeed": 40,
     "stun": 0,
-    "rarity": "COMMON",
-    "reforge": "NONE"
+    "rarity": "COMMON / ",
+    "reforge": ""
   }
 }

@@ -1,16 +1,16 @@
 {
-    "cash": 200,
+    "cash": 300,
     "weapon": {
-        "display_name": "Claws",
-        "dmg": 125,
+        "display_name": "Dagger",
+        "dmg": 80,
         "firedmg": 0,
         "waterdmg": 0,
         "electrodmg": 0,
         "earthdmg": 0,
-        "element": "EARTH",
-        "atkspeed": 75,
-        "stun": 0,
-        "rarity": "UNCOMMON",
-        "reforge": "NONE"
+        "element": "",
+        "atkspeed": 40,
+        "stun": 510,
+        "rarity": "COMMON / COMMON",
+        "reforge": "Quick"
     }
 }

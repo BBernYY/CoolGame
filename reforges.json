@@ -3,102 +3,102 @@
     "dmg": 15,
     "firedmg": 0.05,
     "element": "FIRE",
-    "display_name": "Hot",
+    "reforge": "Hot",
     "rarity": "UNCOMMON"
   },
   "water": {
     "dmg": 15,
     "waterdmg": 0.05,
     "element": "WATER",
-    "display_name": "Wet",
+    "reforge": "Wet",
     "rarity": "UNCOMMON"
   },
   "electro": {
     "dmg": 15,
     "electrodmg": 0.05,
     "element": "ELECTRO",
-    "display_name": "Zapping",
+    "reforge": "Zapping",
     "rarity": "UNCOMMON"
   },
   "earth": {
     "dmg": 15,
     "earthdmg": 0.05,
     "element": "EARTH",
-    "display_name": "Dirty",
+    "reforge": "Dirty",
     "rarity": "UNCOMMON"
   },
   "legendary": {
     "dmg": 50,
     "atkspeed": 10,
     "stun": 50,
-    "display_name": "L E G E N D A R Y",
+    "reforge": "L E G E N D A R Y",
     "rarity": "LEGENDARY"
   },
   "fast": {
     "dmg": -100,
     "atkspeed": 50,
     "stun": 0,
-    "display_name": "Light",
+    "reforge": "Light",
     "rarity": "COMMON"
   },
   "heavy": {
     "dmg": 150,
-    "atkspeed": -10,
+    "atkspeed": -25,
     "stun": 0,
-    "display_name": "Heavy",
+    "reforge": "Heavy",
     "rarity": "COMMON"
   },
   "fire_rare": {
     "dmg": 50,
-    "atkspeed": -10,
+    "atkspeed": 10,
     "stun": 100,
     "firedmg": 0.1,
-    "display_name": "Flaming",
+    "reforge": "Flaming",
     "rarity": "RARE"
   },
   "stun": {
     "dmg": -20,
     "atkspeed": -20,
     "stun": 500,
-    "display_name": "Quick",
+    "reforge": "Stunning",
     "rarity": "COMMON"
   },
   "water_rare": {
     "dmg": 50,
-    "atkspeed": -10,
+    "atkspeed": 10,
     "stun": 100,
     "firedmg": 0.1,
-    "display_name": "Oceanic",
+    "reforge": "Oceanic",
     "rarity": "RARE"
   },
   "electro_rare": {
     "dmg": 50,
-    "atkspeed": -10,
+    "atkspeed": 10,
     "stun": 100,
     "electrodmg": 0.1,
-    "display_name": "Lightning",
+    "reforge": "Lightning",
     "rarity": "RARE"
   },
   "earth_rare": {
     "dmg": 50,
-    "atkspeed": -10,
+    "atkspeed": 10,
     "stun": 100,
     "earthdmg": 0.1,
-    "display_name": "Rocky",
+    "reforge": "Rocky",
     "rarity": "RARE"
   },
   "dumb": {
     "dmg": -50,
-    "atkspeed": -20,
+    "atkspeed": 20,
     "stun": 0,
-    "display_name": "Dumb",
+    "reforge": "Dumb",
     "rarity": "COMMON"
   },
   "dumb_rare": {
     "dmg": -100,
-    "atkspeed": -50,
+    "atkspeed": 50,
     "stun": 0,
-    "display_name": "Retarded",
+    "reforge": "Retarded",
     "rarity": "RARE"
   }
 }
